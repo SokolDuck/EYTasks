@@ -1,0 +1,15 @@
+{% load static %}
+
+
+<h1>Uploaded files list:</h1>
+<button type="button" onclick="/upload_file/"> <a href="{% url 'ExcelManager:upload' %}">Upload new file</a></button><br>
+{% if all_files %}
+    <ul>
+    {% for file in all_files %}
+        <li><a href="{% url 'ExcelManager:detail' file.Id %}">{{ file.Name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No uploaded files on server.</p>
+{% endif %}
+

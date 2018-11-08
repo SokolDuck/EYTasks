@@ -1,0 +1,30 @@
+<h1> {{ file.Name }}</h1>
+
+<table border="2" width="90%" cellpadding="5">
+    <tr>
+     <th width="2%">Row</th>
+     <th width="3%">BalaceAccountNumber</th>
+     <th>BalanceOfInputAssets</th>
+     <th>BalanceOfInputLiabilities</th>
+     <th>CashFlowDebit</th>
+     <th>CashFlowCredit</th>
+     <th>BalanceOfOutputAssets</th>
+     <th>BalanceOfOutputLiabilities</th>
+    </tr>
+    {% for record in records %}
+    <tr>
+        {% for col in record %}
+         <td>{{ col }}</td>
+        {% endfor %}
+     {% endfor %}
+     </tr>
+     <tr>
+         <th>Баланс</th>
+         <th></th>
+     {% for col in results %}
+        <th>{{ col }}</th>
+     {% endfor %}
+     
+     </tr>
+  </table>
+ 
